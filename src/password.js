@@ -14,7 +14,6 @@ function passwordIsValid(){
         if (psw.length <8){
             throw("password should be longer than 8 characters");
         }
-        
     }
     catch(e){
         console.log("error "+ e);
@@ -61,7 +60,7 @@ function passwordIsValid(){
 function passwordIsOk(){
     const regexp1 = /[A-Z]/;
 if ((psw != '' )&&(psw.length >=8 )&&(regexp1.test(psw)==true)){
-        console.log(true)
+        console.log(true);
 }
 else{
     console.log(false);
@@ -69,8 +68,21 @@ else{
 
 
 }
+
+function passwordIsNeverOk(){
+    try{
+    if ((psw == '' )||(psw.length <8 )){
+            throw("Password is Not okay");
+        }
+        else console.log("Password is good");
+    }
+    catch(e){
+        console.log("error "+e);
+    }
+}
  //Console.log("KillJ0!!2")
 module.exports = {
     passwordIsValid,
+    passwordIsNeverOk,
     passwordIsOk
 }
