@@ -7,9 +7,9 @@ describe("Password checker",function(){
 });
 
 describe("Password verify",function(){
-  //  let psw = "KillJ0!!2";
+    //let psw = "KillJ0!!2";
     it("Should Check if password is OK",()=>{
-        expect(password.passwordIsOk()).toBe();
+        expect(password.passwordIsOk()).toBe(true);
     });
 });
 

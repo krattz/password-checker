@@ -1,13 +1,15 @@
-var psw= 'KillJ0!!2';
+var psw= 'K1llJ0y@2';
+
 function passwordIsValid(){
+    
     try{
         if (psw == ''){
             throw("password should exist");
         }
-        
     }
     catch (e){
         console.log("error "+ e);
+        
     }
    
     try{
@@ -16,8 +18,9 @@ function passwordIsValid(){
         }
     }
     catch(e){
-        console.log("error "+ e);
+        console.log("error "+ e);    
     }
+
     try {
         const regexp = /[a-z]/;
         if (regexp.test(psw)!=true){
@@ -25,8 +28,9 @@ function passwordIsValid(){
         }
     }
     catch(e){
-        console.log("error "+e);
+        console.log("error "+e);    
     }
+
     try {
         const regexp1 = /[A-Z]/;
         if (regexp1.test(psw)!=true){
@@ -36,6 +40,7 @@ function passwordIsValid(){
     catch(e){
         console.log("error "+e);
     }
+
     try {
         const regexp2 = /[0-9]/;
         if (regexp2.test(psw)!=true){
@@ -43,11 +48,11 @@ function passwordIsValid(){
         }
     }
     catch(e){
-        console.log("error "+e);
+        console.log("error "+e);    
     }
 
     try {
-        const regexp3 = /g*[ \ ^ $ . ! @ % & | ? * + ( ) + = - _  ; :]/;
+        const regexp3 = /g*[ \ ^ $ . ! @ % & | ? * + { } ( ) + = - _  ; :]/;
         if (regexp3.test(psw)!=true){
             throw("password should have at least one special character");
         }
@@ -59,14 +64,14 @@ function passwordIsValid(){
 
 function passwordIsOk(){
     const regexp1 = /[A-Z]/;
+    let msg = '';
 if ((psw != '' )&&(psw.length >=8 )&&(regexp1.test(psw)==true)){
-        console.log(true);
+        msg = true;
 }
 else{
-    console.log(false);
+    msg = false;
 }
-
-
+return msg;
 }
 
 function passwordIsNeverOk(){
@@ -74,13 +79,14 @@ function passwordIsNeverOk(){
     if ((psw == '' )||(psw.length <8 )){
             throw("Password is Not okay");
         }
-        else console.log("Password is good");
+
     }
     catch(e){
-        console.log("error "+e);
+        console.log(" error "+e);
     }
 }
- //Console.log("KillJ0!!2")
+
+ //Console.log("KillJ0!!2");
 module.exports = {
     passwordIsValid,
     passwordIsNeverOk,
