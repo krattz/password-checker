@@ -1,4 +1,4 @@
-//var passw= 'K1llJ0y@2';
+var password= 'K1llJ0y@2';
 
 function passwordIsValid(password){
     var count = 0;
@@ -64,11 +64,9 @@ function passwordIsValid(password){
 
     if(count >5){
         respond= console.log("Password is valid");
-    }else {
+    }else if(count <5) {
         respond = console.log("Password not valid");
     }
-    
-    return respond; 
 }
 
 
@@ -95,9 +93,9 @@ function passwordIsNeverOk(password){
         console.log(" error "+e);
     }
 }
-console.log(passwordIsValid('KillJ0!!2'));
-console.log(passwordIsOk('KillJ0!!2'));
-console.log(passwordIsNeverOk('KillJ0!!2'));
+console.log(passwordIsValid(password));
+console.log(passwordIsOk(password));
+console.log(passwordIsNeverOk(password));
 module.exports = {
     passwordIsValid,
     passwordIsOk,
